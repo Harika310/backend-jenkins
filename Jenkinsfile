@@ -32,7 +32,7 @@ pipeline {
             steps {
 
                     sh """
-                    docker build -t joindevops/backend:${appVersion} .
+                    docker build -t harika402/backend:${appVersion} .
                     docker images
                     """
             }
