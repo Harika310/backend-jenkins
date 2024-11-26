@@ -29,7 +29,9 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                withAWS(region: 'us-east-1', credentials: 'aws-creds') {
+                   sh 'npm install'
+                }   
             }
         }
         stage('Docker build') {
